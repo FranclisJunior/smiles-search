@@ -1,0 +1,6 @@
+<button [type]="type" [class]="class" [disabled]="isLoading || !isFormValid">
+    <span [class.hide-content]="isLoading">
+        <ng-content></ng-content>
+    </span>
+    <i class="icon-spinner spinner" *ngIf="isLoading"></i>
+</button>

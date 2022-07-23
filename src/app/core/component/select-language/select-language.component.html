@@ -1,0 +1,47 @@
+<!-- <li class="nav-item dropdown">
+    <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-language mr-2"></i>
+        {{lang}}
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-right dropdown-content wmin-md-350">
+        <div class="dropdown-content-body p-2">
+            <div class="row no-gutters">
+                <div class="col-md-6 col-sm-4">
+                    <a (click)="changeLanguage('pt')" href="javascript:void(0)"
+                        class="d-block text-default text-center ripple-dark rounded p-3">
+                        <img src="assets/images/language/Brazil-icon.png">
+                        <div class="font-size-sm font-weight-semibold text-uppercase mt-2">Português - Brasil</div>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-sm-4">
+                    <a (click)="changeLanguage('en')" href="javascript:void(0)"
+                        class="d-block text-default text-center ripple-dark rounded p-3">
+                        <img src="assets/images/language/USA-icon.png">
+                        <div class="font-size-sm font-weight-semibold text-uppercase mt-2">Inglês</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</li> -->
+
+<ul class="navbar-nav">
+    <li class="nav-item dropdown language-switch">
+        <a class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
+            <img [src]="language.img" class="img-flag mr-2"> 
+            <span>{{('languages.' + language.key) | translate}}</span>
+        </a>
+        <div class="dropdown-menu">
+            <a (click)="changeLanguage('en')" href="javascript:void(0);" class="dropdown-item english" [ngClass]="language.key == 'en' ? 'active': ''">
+                <img src="assets/images/language/english.png" class="img-flag" alt="">
+                <span translate>languages.en</span>
+            </a>
+            <a (click)="changeLanguage('pt-br')" href="javascript:void(0);" class="dropdown-item english" [ngClass]="language.key == 'pt-br' ? 'active': ''">
+                <img src="assets/images/language/brazil.png" class="img-flag" alt="">
+                <span translate>languages.pt-br</span>
+            </a>
+        </div>
+    </li>
+</ul>

@@ -1,0 +1,9 @@
+<div class="dataTables_info" role="status" aria-live="polite">{{'system.page' | translate}} {{currentPage}} {{'system.of' | translate}} {{totalPages}}</div>
+
+<div class="dataTables_paginate paging_simple_numbers">
+    <button (click)="changeToFirstPage()" class="paginate_button" [disabled]="currentPage === firstPage">←</button>
+    <span>
+        <button *ngFor="let page of pages" class="paginate_button" [ngClass]="page == currentPage ? 'current' : ''" (click)="changePage(page)">{{page}}</button>
+    </span>
+    <button (click)="changeToLastPage()" class="paginate_button" [disabled]="currentPage === totalPages">→</button>
+</div>

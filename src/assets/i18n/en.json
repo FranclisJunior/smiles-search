@@ -1,0 +1,140 @@
+{
+    "languages": {
+        "pt-br": "Portuguese - BR",
+        "en": "English"
+    },
+    "domain": {
+        "user": {
+            "super-user": "Super user"
+        }
+    },
+    "operations": {
+        "success": {
+            "title": "Success",
+            "message": "Operation successfully performed."
+        },
+        "error": {
+            "title": "Error"
+        },
+        "warning": {
+            "title": "Warning"
+        },
+        "info": {
+            "title": "Info"
+        },
+        "insert": {
+            "success": "Item inserted.",
+            "error": "Error inserting item."
+        },
+        "update": {
+            "success": "Item updated.",
+            "error": "Error updating item."
+        },
+        "delete": {
+            "success": "Item deleted.",
+            "error": "Error deleting item.",
+            "confirmation": "Are you sure you want to delete this item?"
+        },
+        "save": {
+            "success": "Item saved.",
+            "error": "Error saving item."
+        }
+    },
+    "system": {
+        "actions": "Actions",
+        "confirm": "Confirm",
+        "back": "Back",
+        "cancel": "Cancel",
+        "clear": "Clear",
+        "close": "Close",
+        "delete": "Delete",
+        "edit": "Edit",
+        "exit": "Exit",
+        "new": "New",
+        "enter": "Enter",
+        "signin-with": "Or sign in with",
+        "signin-virtus-account": "Sign in into your virtus account",
+        "select-item": "Select an item",
+        "empty-list": "No items found",
+        "show": "Show",
+        "page": "Page",
+        "of": "of",
+        "form": {
+            "validation": {
+                "required": "Required field",
+                "email": "Invalid e-mail",
+                "max-size": "Maximum size is {{value}} characters",
+                "min-size": "Minimum size is {{value}} characters",
+                "max-value": "The maximum value allowed for this field is {{value}}",
+                "min-value": "The minimum value for the field is {{value}}",
+                "password": {
+                    "invalid": "Your password must be at least 1 lowercase alphabetic character, at least 1 uppercase alphabetic character, contain at least 1 numeric character, for less than a special character (@ # $% & *), and 8 to 16 characters",
+                    "not-same": "The passwords are not the same"
+                }
+            }
+        },
+        "no": "No",
+        "ok": "OK",
+        "pagination": {
+            "items-page": "Items per page",
+            "next-page": "Next page",
+            "previous-page": "Previous page",
+            "first-page": "First page",
+            "last-page": "Last page"
+        },
+        "password": "Password",
+        "register": "Register",
+        "search": {
+            "base": "Search",
+            "advanced": "Advanced Search"
+        },
+        "main": "Main",
+        "options": "Options",
+        "update": "Update",
+        "upload-file": {
+            "outside-dropzone": "Drag and drop file here or click to upload.",
+            "inside-dropzone": "Drop file.",
+            "too-large": "File too large. Maximum size is",
+            "unsupported-file": "Unsupported file"
+        },
+        "view": "View",
+        "yes": "Yes",
+        "session": {
+            "expired": "Your session has expired. Please sign in again.",
+            "renewed": "Session renewed. Please try again."
+        },
+        "table": {
+            "empty": "No records found."
+        }
+    },
+    "change-password": {
+        "label": "Change password",
+        "current": "Current password",
+        "new": "New password",
+        "repeat": "Repeat password",
+        "success": "Password changed successfully"
+    },
+    "login": {
+        "error": "Username and/or password incorrect.",
+        "username": "Username",
+        "password": "Password"
+    },
+    "home": {
+        "title": "Home"
+    },
+    "user": {
+        "title": {
+            "singular": "User",
+            "plural": "Users"
+        },
+        "operations": {
+            "register": "Register User",
+            "update": "Update User",
+            "view": "View User"
+        },
+        "name": "Name",
+        "username": "Username",
+        "role": "Role",
+        "password": "Password"
+    }
+}

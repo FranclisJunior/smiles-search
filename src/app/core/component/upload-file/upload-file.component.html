@@ -1,0 +1,30 @@
+<div [ngClass]="{dropzone: !onDrop, ondropzone: onDrop}" class="base-dropzone" appUploadFile
+    (fileOver)="dragOver($event)" (fileDropped)="onFileDropped($event)">
+    <input #fileDrop type="file" name="fileDrop" id="fileDrop" [accept]="acceptedFiles">
+    <span><i class="icon-cloud-upload"></i></span>
+    <h3 *ngIf="onDrop">{{'system.upload-file.inside-dropzone' | translate }}</h3>
+    <h3 *ngIf="!onDrop">{{ 'system.upload-file.outside-dropzone' | translate }}</h3>
+</div>
+
+<div class="row mt-1 d-flex justify-content-center">
+    <span *ngIf="unsupportedFileError" class="error-file" id="error-file"><i class="icon-cancel-circle2 mr-2 text-danger"></i>{{ 'system.upload-file.unsupported-file' | translate }}</span>
+    <span *ngIf="limitSizeError" class="error-file" id="error-file"><i class="icon-cancel-circle2 mr-2 text-danger"></i>{{ 'system.upload-file.too-large' | translate }} {{ limitFileSize / 1000000 }} MB.</span>
+</div>
+
+<div class="files-list" *ngIf="files.length !== 0">
+    <div class="single-file" *ngFor="let file of files; let i = index">
+        <div class="">
+            <i class="icon-file-text2"></i>
+        </div>
+
+        <div class="file-info pl-2">
+            <h4 class="file-name mb-0">{{ file?.name }}</h4>
+            <p class="file-size mb-0">{{ file?.size / 1000 | number: '1.2-2' }} KB</p>
+        </div>
+
+        <div class="file-delete" (click)="removeFile(i)">
+            <i class="icon-cancel-circle2"></i>
+        </div>
+    </div>
+
+</div>

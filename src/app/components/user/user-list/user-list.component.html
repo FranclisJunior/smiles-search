@@ -1,0 +1,72 @@
+<!-- usuários -->
+<div class="card">
+
+    <hr class="m-0">
+
+    <div class="datatable-header">
+        <!-- <app-simple-search (keySearch)="onSearch($event)"></app-simple-search> -->
+        <app-advanced-search [properties]="searchProperties" (searchSubmit)="onSearch($event)"
+            (keySearch)="onSearch($event)"></app-advanced-search>
+
+        <div class="header-elements">
+            <div class="list-icons">
+                <a (click)="listItems()" class="list-icons-item" data-action="reload"></a>
+            </div>
+        </div>
+    </div>
+
+    <app-spinner [loading]="loading"></app-spinner>
+
+    <table [hidden]="loading" class="table datatable-basic table-striped table-hover dataTable table-hover">
+        <thead>
+            <tr appSortHeader (sortChanged)="onChangeSort($event)">
+                <th sortable="id">Id</th>
+                <th sortable="name">{{'user.name' | translate}}</th>
+                <th sortable="username">{{'user.username' | translate}}</th>
+                <th>{{'user.role' | translate}}</th>
+                <th>Status</th>
+                <th class="th-actions">{{'system.actions' | translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr align="center" *ngIf="listIsEmpty">
+                <td colspan="100">{{'system.empty-list' | translate}}</td>
+            </tr>
+            <tr *ngFor="let item of items" class="h-100">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.username}}</td>
+                <td>
+                    <span *ngFor="let role of item.roles; let i = index">
+                        {{role | role | translate}}{{ item.roles.length > 1 && i !== item.roles.length - 1 ? ',' : '' }}
+                    </span>
+                </td>
+                <td><span class="badge badge-success">Ativo</span></td>
+                <td class="text-center actions">
+                    <button class="btn btn-light text-primary" type="button" (click)="view(item.id, item.id)"
+                        *ngxPermissionsOnly="['read-*', 'read-user']" appTooltip tooltipPlacement="top"
+                        tooltipValue="system.view">
+                        <i class="mdi mdi-visibility"></i>
+                    </button>
+                    <button class="btn btn-light" type="button" (click)="edit(item.id)"
+                        *ngxPermissionsOnly="['update-*', 'update-user']" appTooltip tooltipPlacement="top"
+                        tooltipValue="system.edit">
+                        <i class="mdi mdi-edit"></i>
+                    </button>
+                    <button class="btn btn-light btn-delete text-danger" type="button"
+                        *ngxPermissionsOnly="['delete-*', 'delete-user']" (click)="remove(item.id)"
+                        data-target="#modal-delete-confirmation" data-toggle="modal" appTooltip tooltipPlacement="top"
+                        tooltipValue="system.delete">
+                        <i class="mdi mdi-delete"></i>
+                    </button>
+                </td>
+            </tr>
+            <app-delete-confirmation target="modal-delete-confirmation" (onOK)="delete()"></app-delete-confirmation>
+        </tbody>
+    </table>
+
+    <div class="datatable-footer" [hidden]="loading">
+        <app-paginator [totalPages]="totalPages" (pageChanged)="onChangePaginator($event)"></app-paginator>
+        <app-page-size (pageSizeChanged)="setPageSize($event)"></app-page-size>
+    </div>
+</div>

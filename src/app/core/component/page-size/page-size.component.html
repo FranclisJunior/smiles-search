@@ -1,0 +1,8 @@
+<div class="form-group row">
+    <label class="col-md-2 offset-lg-9 col-form-label text-right">{{'system.show' | translate}}:</label>
+    <div class="col-md-1">
+        <select appSelect2 class="form-control" (change)="setPageSize($event.target.value)">
+            <option *ngFor="let value of values" [value]="value">{{value}}</option>
+        </select>
+    </div>
+</div>

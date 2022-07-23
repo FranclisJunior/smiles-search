@@ -1,0 +1,24 @@
+<div class="dataTables_filter"><label>
+        <!-- <span>{{'system.search.advanced' | translate}}:</span> -->
+        <input class="input-search" [(ngModel)]="currentSearch" #searchRef type="search"
+            placeholder="{{'system.search.base' | translate }}"></label>
+    <div class="btn-group justify-content-center">
+        <button class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-list-unordered"></i></button>
+
+        <div class="dropdown-menu w-300 p-15">
+            <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()">
+                <div class="form-group" *ngFor="let property of properties">
+                    <label class="col-form-label">{{property.label | translate}}:</label>
+                    <input type="text" class="form-control" placeholder="{{property.label | translate}}"
+                        [formControlName]="property.name">
+                </div>
+
+                <div class="text-right" style="margin-top: 10px">
+                    <button (click)="onClear()" type="button" class="btn mr-2">{{'system.clear' | translate}}</button>
+                    <button type="submit" class="btn btn-primary">{{'system.search.base' | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

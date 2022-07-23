@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+.breadcrumb-line {
+    height: 40px;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+.actions button {
+    margin: 1px;
+    background-color: transparent;
+    font-size: 25px;
+    margin: 0px;
+    margin-left: 3px;
+    margin-right: 3px;
+    padding: 0px;
+}
+
+.actions button:hover {
+    background-color: transparent;
+}
+
+.actions {
+    padding: 2px !important;
+}
+
+.th-actions {
+    text-align: center;
+}
+
+.btn-crud {
+    width: 100px;
+}
+
+.th-actions {
+    width: 200px;
+}
+
+.sidebar-user-material {
+	// Add backgroupd image    
+    .sidebar-user-material-body {
+		background: url(assets/images/background/sidebar.jpg) center center no-repeat;
+	    background-size: cover;
+    }
+}
+
+.sidebar-content {
+    overflow: visible !important;
+}
+
+.header-elements {
+    float: right !important;
+    margin-top: 5px;
+}
